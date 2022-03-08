@@ -31,6 +31,5 @@
     "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   },
-  "license": "MIT",
-  "type": "module"
+  "license": "MIT"
 }
