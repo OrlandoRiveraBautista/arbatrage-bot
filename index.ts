@@ -2,6 +2,8 @@ import { ethers } from "ethers";
 import { Pool } from "@uniswap/v3-sdk";
 import { Token } from "@uniswap/sdk-core";
 import { abi as IUniswapV3PoolABI } from "@uniswap/v3-core/artifacts/contracts/interfaces/IUniswapV3Pool.sol/IUniswapV3Pool.json";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 /** Pool provider */
 const provider = new ethers.providers.JsonRpcProvider(process.env.RPC_URL);
@@ -90,7 +92,7 @@ async function main() {
     getPoolState(),
   ]);
 
-  const TokenA = new Token(3, immutables.token0, 1, "USDC", "USD Coin"); // creating Token instance of USDC from the pool immutables
+  const TokenA = new Token(3, immutables.token0, 6, "USDC", "USD Coin"); // creating Token instance of USDC from the pool immutables
   const TokenB = new Token(3, immutables.token1, 18, "WETH", "Wrapped Ether"); // creating Token instance of ETH from the pool immutables
 
   const poolExample = new Pool(
